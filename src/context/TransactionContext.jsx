@@ -60,7 +60,7 @@ export const TransactionProvider = ({children}) => {
 
     const connectWallet = async () => {
         try {
-            if(!ethereum) return alert('please install metamask');
+            if(!ethereum) return alert('please install metamask. For Android, Read the Guides section');
 
             const accounts = await ethereum.request({method: 'eth_requestAccounts'});
 
@@ -75,7 +75,7 @@ export const TransactionProvider = ({children}) => {
 
     const sendTransactions = async () => {
         try {
-            if(!ethereum) return alert('please install metamask');
+            if(!ethereum) return alert('please install metamask. For Android, Read the Guides section');
 
             const {addressTo, amount, keyword, message} = formData;
             const transactionContract = getEthereumContract();
@@ -113,7 +113,7 @@ export const TransactionProvider = ({children}) => {
 
     const getTransactions = async () => {
         try {
-            if(!ethereum) return alert('please install metamask');
+            if(!ethereum) return alert('please install metamask. For Android, Read the Guides section');
 
             const transactionContract = getEthereumContract();
             const availableTransactions = await transactionContract.getAllTransactions();
