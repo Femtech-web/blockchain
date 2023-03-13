@@ -21,7 +21,14 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
 const commonStyles = 'text-white min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400';
 
 const Welcome = () => {
-  const { connectWallet, currentAccount, formData, setFormData, handleChange, sendTransactions, isLoading } = useContext(TransactionContext);
+  const { connectWallet, 
+    currentAccount, 
+    formData, 
+    setFormData, 
+    handleChange,
+    sendTransactions, 
+    isLoading } 
+  = useContext(TransactionContext);
 
   const handleSubmit = (e) => {
     const {addressTo, amount, keyword, message} = formData;
@@ -42,7 +49,7 @@ const Welcome = () => {
             Send crypto <br /> Across the world
           </h1>
           <p className='text-white text-left mt-2 font-light mf:w-9/12 w-11/12 text-base'>
-          Explore the Crypto World. Buy and sell Cryptocurrencies easily on Krypto
+          Explore the Crypto World. Buy and sell Cryptocurrencies easily on Crypt
            </p>
 
           {!currentAccount && <button

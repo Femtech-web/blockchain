@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../images/logo.png'
+import { Link } from 'react-router-dom';
 import { BsFacebook } from 'react-icons/bs';
 import { FaTwitter } from 'react-icons/fa';
 import { BsInstagram } from 'react-icons/bs';
@@ -10,12 +10,14 @@ const Footer = () => {
     <div className='w-full flex md:justify-center justify-between flex-col items-center gradient-bg-footer p-4'>
       <div className="flex w-full sm:flex-row flex-col justify-between items-center my-4">
         <div className='flex flex-[0.5] justify-center items-center'>
-          <Logo />
+        <Link to={'/'}>
+           <Logo />
+          </Link>
         </div>
         <div className="flex flex-1 flex-wrap justify-evenly items-center sm:mt-0 mt-5 w-full">
           <p className="text-white text-base mx-2 cursor-pointer">Market</p>
           <p className="text-white text-base mx-2 cursor-pointer">Exchange</p>
-          <p className="text-white text-base mx-2 cursor-pointer">Tutorials</p>
+          <p className="text-white text-base mx-2 cursor-pointer">Guides</p>
           <p className="text-white text-base mx-2 cursor-pointer">Wallets</p>
         </div>
       </div>

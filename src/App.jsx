@@ -1,24 +1,20 @@
-import React from 'react'
-import Navbar from './components/Navbar';
-import Welcome from './components/Welcome';
-import Services from './components/Services';
-import Transactions from './components/Transactions';
-import Footer from './components/Footer';
+import React from 'react';
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import Home from './components/Home';
+import Guides from './components/Guides';
 
 
 const App = () => {
-  
 
   return (
-    <div className="h-screen">
-      <div className='gradient-bg-welcome'>
-        <Navbar />
-        <Welcome />
-      </div>
-        <Services />
-        <Transactions />
-        <Footer />  
-   </div>
+    <>
+      <Router basename='/'>
+          <Routes>
+            <Route exact path="/" element={<Home />}/>
+            <Route exact path="/Guides" element={<Guides />}/>
+          </Routes>
+      </Router>
+    </>
   )
 }
 

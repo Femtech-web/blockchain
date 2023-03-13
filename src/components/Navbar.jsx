@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { AiOutlineClose } from 'react-icons/ai';
-import logo from '../../images/logo.png';
 import Logo from './Logo';
 
 
@@ -21,14 +21,23 @@ const Navbar = () => {
      justify-between items-center p-4'>
       <div className="md:flex-[0.5] 
       flex-initial justify-center items-center">
-          <Logo />
+          <Link to={'/'}>
+           <Logo />
+          </Link>
       </div>
       <ul className="text-white md:flex
        hidden list-none flex-row 
        justify-between items-center 
        flex-initial">
-          {['Market', 'Exchange', 'Tutorial', 'Wallet'].map((item, index) => 
-            <NavbarItem key={item + index} title={item}/>
+          {['Market', 'Exchange', 'Guides', 'Wallet'].map((item, index) => { 
+          return item === 'Guides' ?
+            <Link to={item}>
+             <NavbarItem key={item + index} title={item}/>
+            </Link>
+          :
+               <NavbarItem key={item + index} title={item}/>
+          }
+           
           )}
           <li className='bg-[#2952e3] py-4 px-7 mx-4 
           rounded-full cursor-pointer hover:bg-[#2546bd]'>Login</li>
@@ -51,8 +60,15 @@ const Navbar = () => {
         <li className='text-xl w-full my-4'>
           <AiOutlineClose onClick={(e) => setToggleMenu(false)}/>
         </li>
-        {['Market', 'Exchange', 'Tutorial', 'Wallet'].map((item, index) => 
-            <NavbarItem key={item + index} title={item} classProps='my-2 text-lg'/>
+        {['Market', 'Exchange', 'Guides', 'Wallet'].map((item, index) => { 
+          return item === 'Guides' ?
+            <Link to={item}>
+             <NavbarItem key={item + index} title={item}/>
+            </Link>
+          :
+               <NavbarItem key={item + index} title={item}/>
+          }
+           
           )}
       </ul>
       }
